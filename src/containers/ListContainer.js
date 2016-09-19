@@ -1,43 +1,40 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router'
-import { reduxForm } from 'redux-form'
-import fetchConcerts from '../actions/fetchConcerts.js'
 import { bindActionCreators } from 'redux'
-import '../routes.js'
+import { connect } from 'react-redux'
+import fetchConcerts from '../actions/fetchConcerts.js'
 
 
-class ListContainer extends Component {
+const List = class extends Component {
 
-  handleFormSubmit(formProps){
+
+  handleFormSubmit(props){
     event.preventDefault()
-    debugger
-    this.props.fetchConcerts(formProps)
-
+    var city = document.getElementById("city").value
+    var date = document.getElementById("date").value
+    this.props.fetchConcerts(city, date)
   }
 
 
   render(){
-    const { handleSubmit, fields: { userCity, userDate }} = this.props;
-
-
+    debugger
         return (
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} >
-                <label>City</label>
-                <input className="form-input" {...userCity} />
-                <label>Date</label>
-                <input className="form-input" {...userDate} />
-              <button action="submit" className="btn btn-primary">Sign in!</button>
+          <form onSubmit={this.handleFormSubmit.bind(this)}>
+              <label>City</label>
+              <input type="text" className="entry-input" id="city"/>
+              <label>Date</label>
+              <input type="date" className="entry-input" id="date"/>
+              <button type="submit">Submit</button>
             </form>
         );
       }
     }
+const ListContainer = connect(mapStateToProps, mapDispatchToProps)(List)
 
-  function mapDispatchToProps(dispatch) {
-  return bindActionCreators({fetchConcerts: fetchConcerts}, dispatch)
-}
+  function mapStateToProps(state) {
+    return {concertList: state.concertList}
+  }
 
-
-export default reduxForm({
-      form: 'search',
-      fields: ['userCity', 'userDate']
-    }, null, mapDispatchToProps)(ListContainer);
+    function mapDispatchToProps(dispatch) {
+      return  bindActionCreators({fetchConcerts}, dispatch)
+    }
+export default ListContainer;
