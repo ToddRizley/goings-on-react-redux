@@ -14,11 +14,6 @@ const Form = class extends Component {
   }
 
 
-
-
-
-
-
   render(){
         return (
         <div>
