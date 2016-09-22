@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
-import { Router, Link, Route } from 'react-router'
+import { Link } from 'react-router'
+import updateSelectedEvent from '../actions/updateSelectedEvent.js'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
-const ListRow = class extends Component {
+const Row = class extends Component {
+
   handleClick() {
     event.preventDefault()
-    debugger
-    this.props.updateSelectedEvent
+    var selectedEvent = this.props.concertData
+    this.props.updateSelectedEvent(selectedEvent)
   }
 
   render(){
@@ -18,4 +22,9 @@ const ListRow = class extends Component {
       }
     }
 
+const ListRow = connect(null, mapDispatchToProps)(Row)
+
+  function mapDispatchToProps(dispatch) {
+    return  bindActionCreators({updateSelectedEvent}, dispatch)
+  }
 export default ListRow;
