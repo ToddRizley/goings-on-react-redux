@@ -13,9 +13,8 @@ export default class AppContainer extends Component {
         <SearchForm />
         <ListContainer />
 
-        <Map/>
+        {/* <Map/> */}
         </div>
-      </div>
     );
   }
 }
