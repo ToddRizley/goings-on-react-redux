@@ -22,7 +22,6 @@ app.listen(3006, function () {
 // https://api.yelp.com/v2/search?term=german+food&location=Hayes&cll=37.77493,-122.419415
 
 app.get('/yelpResults/:type/:lat/:lng/:radius/:limit/',  (req, res) => {
-  debugger
   var searchParams = { term: req.params.type, ll: `${req.params.lat}, ${req.params.lng}`, limit: req.params.limit }
   if (req.params.radius <= 40000) {
     searchParams['radius_filter'] = req.params.radius
