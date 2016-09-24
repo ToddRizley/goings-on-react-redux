@@ -4,7 +4,7 @@ import updateSelectedEvent from '../actions/updateSelectedEvent.js'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-const Row = class extends Component {
+const EventRow = class extends Component {
 
   handleClick() {
     event.preventDefault()
@@ -22,9 +22,9 @@ const Row = class extends Component {
       }
     }
 
-const ListRow = connect(null, mapDispatchToProps)(Row)
+const EventListRow = connect(null, mapDispatchToProps)(EventRow)
 
   function mapDispatchToProps(dispatch) {
     return  bindActionCreators({updateSelectedEvent}, dispatch)
   }
-export default ListRow;
+export default EventListRow;

@@ -21,8 +21,8 @@ app.listen(3006, function () {
 
 // https://api.yelp.com/v2/search?term=german+food&location=Hayes&cll=37.77493,-122.419415
 
-app.get('/yelpResults/:type/:lat/:lng/:radius/:limit/:sortBy',  (req, res) => {
-  var searchParams = { term: req.params.type, ll: `${req.params.lat}, ${req.params.lng}`, sort: req.params.sortBy, limit: req.params.limit }
+app.get('/yelpResults/:type/:lat/:lng/:radius/:limit/',  (req, res) => {
+  var searchParams = { term: req.params.type, ll: `${req.params.lat}, ${req.params.lng}`, limit: req.params.limit }
   if (req.params.radius <= 40000) {
     searchParams['radius_filter'] = req.params.radius
   }
@@ -34,6 +34,8 @@ app.get('/yelpResults/:type/:lat/:lng/:radius/:limit/:sortBy',  (req, res) => {
     console.error(err)
   })
 });
+
+
 
 app.get('/yelpResults/:businessID', function (req, res) {
   yelp.business(req.params.businessID)
