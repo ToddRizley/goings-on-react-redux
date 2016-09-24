@@ -9,7 +9,7 @@ const BarOption= class extends Component {
 handleClick() {
     event.preventDefault()
     var selectedbar = this.props.barData
-    this.props.updateSelectedbar(selectedbar)
+    this.props.updateSelectedBar(selectedbar)
   }
 
   getMiles(i) {

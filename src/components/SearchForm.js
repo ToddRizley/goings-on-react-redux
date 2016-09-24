@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import fetchConcerts from '../actions/fetchConcerts.js'
-import { Link } from 'react-router'
 
 
 const Form = class extends Component {

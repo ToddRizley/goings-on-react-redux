@@ -1,9 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import DiningOptionRow from '../components/DiningOptionRow'
-import axios from 'axios'
-import { bindActionCreators } from 'redux'
-import addRestaurantOptions from '../actions/addRestaurantOptions'
 
 const Evening = class extends Component {
 
@@ -13,9 +9,9 @@ const Evening = class extends Component {
         return (
           <div>
                 <h1>Your Evening Itinerary</h1>
-                <div>Dinner: {this.props.} </div>
-                <div>Event: {this.displayRestaurants()} </div>
-                <div>Drinks: {this.displayRestaurants()} </div>
+                <div>Dinner: {this.props.selectedRestaurant.selectedRestaurant.name} </div>
+                <div>Event: {this.props.selectedEvent.selectedEvent.title} </div>
+                <div>Drinks: {this.props.selectedBar.selectedBar.name} </div>
           </div>
 
         );
@@ -29,9 +25,6 @@ const EveningContainer = connect(mapStateToProps, null)(Evening)
       selectedRestaurant: state.selectedRestaurant,
       selectedBar: state.selectedBar
     }
-  }
-  function mapDispatchToProps(dispatch) {
-    return  bindActionCreators({addRestaurantOptions}, dispatch)
   }
 
 export default EveningContainer;

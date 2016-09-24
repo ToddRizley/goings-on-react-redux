@@ -45,7 +45,7 @@ const BarOptions = class extends Component {
     }
 
 const BarOptionsContainer = connect(mapStateToProps, mapDispatchToProps)(BarOptions)
-//
+
   function mapStateToProps(state) {
     return {selectedEvent: state.selectedEvent, barsList: state.barsList }
   }
