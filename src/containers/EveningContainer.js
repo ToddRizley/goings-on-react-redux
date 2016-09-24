@@ -1,25 +1,25 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import MapComponent from '../components/MapComponent'
+import SelectedRestaurantRow from '../components/SelectedRestaurantRow'
+import SelectedEventRow from '../components/SelectedEventRow'
+import SelectedBarRow from '../components/SelectedBarRow'
+
 const Evening = class extends Component {
-
-
-
 
   render(){
         return (
           <div>
-                <h1>Your Evening Itinerary</h1>
-                <div>Dinner: {this.props.selectedRestaurant.selectedRestaurant.name} </div>
-                <div>Event: {this.props.selectedEvent.selectedEvent.title} </div>
-                <div>Drinks: {this.props.selectedBar.selectedBar.name} </div>
-                <div><MapComponent barCoords={this.props.selectedBar.selectedBar.location.coordinate}
-                  eventCoords={this.props.selectedEvent.selectedEvent.venue.location}
-                  restCoords={this.props.selectedRestaurant.selectedRestaurant.location.coordinate}/></div>
-
+            <h1>Your Evening Itinerary</h1>
+              <SelectedRestaurantRow selectedRestaurant={this.props.selectedRestaurant} />
+              <SelectedEventRow selectedEvent={this.props.selectedEvent} />
+              <SelectedBarRow selectedBar={this.props.selectedBar} />
+            <div>
+              <MapComponent barCoords={this.props.selectedBar.selectedBar.location.coordinate}
+              eventCoords={this.props.selectedEvent.selectedEvent.venue.location}
+              restCoords={this.props.selectedRestaurant.selectedRestaurant.location.coordinate}/>
+            </div>
           </div>
-
-
         );
       }
     }
