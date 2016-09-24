@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import ListRow from '../components/ListRow.js'
+import EventListRow from '../components/EventListRow.js'
 
-
-const List = class extends Component {
-
+const EventList = class extends Component {
 
 displayList () {
       if (this.props.concertList.concertList) {
         return this.props.concertList.concertList.map( (con) =>
-          <div><ListRow concertData={con} /></div>
+          <div><EventListRow concertData={con} /></div>
       )}
-}
-
+    }
 
   render(){
         return (
@@ -23,10 +20,10 @@ displayList () {
         );
       }
     }
-const ListContainer = connect(mapStateToProps, null)(List)
+const EventListContainer = connect(mapStateToProps, null)(EventList)
 
   function mapStateToProps(state) {
     return {concertList: state.concertList}
   }
 
-export default ListContainer;
+export default EventListContainer;

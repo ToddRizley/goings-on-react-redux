@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Map from '../components/MapComponent.js'
+import DiningOptionRow from '../components/DiningOptionRow'
 import axios from 'axios'
 import { bindActionCreators } from 'redux'
 import addRestaurantOptions from '../actions/addRestaurantOptions'
@@ -19,25 +19,19 @@ const DiningOptions = class extends Component {
         this.props.addRestaurantOptions(restaurants)
       })
     }
-    getMiles(i) {
-     return i*0.000621371192;
-    }
 
     displayRestaurants(){
-      if (this.props.restaurantsList.restaurantsList){
-      return this.props.restaurantsList.restaurantsList.map( (rest) => {
-          return(<div>{rest.name} | {rest.location.address[0]} | {rest.location.neighborhoods[0]} | {rest.categories[0][0]} | {this.getMiles(rest.distance).toString().match(/.*\..{0,2}|.*/)[0]} miles from venue</div>)
-        })
-      }
+      if (this.props.restaurantsList.restaurantsList.length){
+      return this.props.restaurantsList.restaurantsList.map( (rest) =>
+              <div><DiningOptionRow restaurantData={rest} /></div>
+        )}
     }
-
-
 
   render(){
         return (
           <div>
-                <h1>Restaurant's in the Area</h1>
-                {this.displayRestaurants()}
+                <h1>Restaurants in the Area</h1>
+                <div> {this.displayRestaurants()} </div>
           </div>
 
         );
