@@ -12,9 +12,7 @@ export default class AppContainer extends Component {
         <center><h1>What Should I Do Tonight?</h1></center>
         <SearchForm />
         <EventListContainer />
-
-        {/* <Map/> */}
-        </div>
+      </div>
     );
   }
 }
