@@ -4,6 +4,7 @@ import selectedEventReducer from './selectedEventReducer'
 import restaurantsReducer from './restaurantsReducer'
 import selectedRestaurantReducer from './selectedRestaurantReducer'
 import barsReducer from './barsReducer'
+import selectedBarReducer from './selectedBarReducer'
 import {reducer as formReducer} from 'redux-form'
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
   selectedEvent: selectedEventReducer,
   restaurantsList: restaurantsReducer,
   selectedRestaurant: selectedRestaurantReducer,
-  barsList: barsReducer
+  barsList: barsReducer,
+  selectedBar: selectedBarReducer
 });
 
 export default rootReducer;
