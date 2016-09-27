@@ -5,6 +5,7 @@ import SelectedRestaurantRow from '../components/SelectedRestaurantRow'
 import SelectedEventRow from '../components/SelectedEventRow'
 import SelectedBarRow from '../components/SelectedBarRow'
 
+
 const Evening = class extends Component {
 
   render(){

@@ -9,6 +9,7 @@ import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router'
 
 const Form = class extends Component {
   state = {
