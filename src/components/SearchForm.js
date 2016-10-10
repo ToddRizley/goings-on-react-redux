@@ -35,10 +35,10 @@ const Form = class extends Component {
             <center>
               <form onSubmit={this.handleFormSubmit.bind(this)}>
                   <label>City</label>
-                  <input type="text" className="entry-input" id="city"/>
+                  <input type="text" id="city" placeholder="Enter your city.."/>
                   <label>Date</label>
-                  <input type="date" className="entry-input" id="date"/>
-                  <button type="submit">Submit</button>
+                  <input type="date" id="date" placeholder="Choose a Date" />
+                  <button className="button" type="submt"> Submit </button>
               </form>
             </center>
           </div>

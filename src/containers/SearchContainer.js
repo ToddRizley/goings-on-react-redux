@@ -3,6 +3,7 @@ import EventListContainer from './EventListContainer.js'
 import SearchForm from '../components/SearchForm.js'
 
 
+
 export default class SearchContainer extends Component {
 
 
@@ -11,14 +12,10 @@ export default class SearchContainer extends Component {
     return (
       <div>
           <center><h1>What Should I Do Tonight?</h1></center>
-
           <SearchForm />
-
           <br />
           <br />
-
           <EventListContainer />
-
         </div>
     );
   }

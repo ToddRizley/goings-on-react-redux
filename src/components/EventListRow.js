@@ -15,7 +15,7 @@ const EventRow = class extends Component {
   render(){
         return (
           <div>
-            <button onClick={this.handleClick.bind(this)}><Link to={"/event/diningpoptions"}>Select Event</Link></button><strong><a href={this.props.concertData.url} target="_blank">{this.props.concertData.title}</a></strong> | {this.props.concertData.venue.name} | {this.props.concertData.taxonomies[0].name}
+            <button className="button" onClick={this.handleClick.bind(this)}><Link to={"/event/diningpoptions"}>Select Event</Link></button><strong><a href={this.props.concertData.url} target="_blank">{this.props.concertData.title}</a></strong> | {this.props.concertData.venue.name} | {this.props.concertData.taxonomies[0].name}
           </div>
 
         );

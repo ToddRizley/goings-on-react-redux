@@ -18,7 +18,7 @@ handleClick() {
 
   render(){
         return (
-          <div><button onClick={this.handleClick.bind(this)}><Link to={"/event/baroptions"}>Select Restuarant</Link></button>
+          <div><button className="button" onClick={this.handleClick.bind(this)}><Link to={"/event/baroptions"}>Select Restuarant</Link></button>
           <strong><a href={this.props.restaurantData.url} target="_blank">{ this.props.restaurantData.name }</a></strong> |
             { " " + this.props.restaurantData.location.address[0] } |
                 { " " + this.props.restaurantData.location.neighborhoods[0] } |
