@@ -7,21 +7,19 @@ const EventList = class extends Component {
 displayList () {
       if (this.props.concertList.concertList) {
         return this.props.concertList.concertList.map( (con) =>
-          <li className="list-group-item">
             <EventListRow concertData={con} />
-        </li>
       )}
     }
 
   render(){
         return (
           <div>
-            <ul className="list-group">
-                {this.displayList()}
-            </ul>
+            <table>
+                <tbody>
+                  { this.displayList() }
+                </tbody>
+            </table>
           </div>
-
-
         );
       }
     }
