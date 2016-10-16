@@ -26,6 +26,7 @@ input[type=text]:focus, [type=date]:focus  {
     outline: none;
 }
 
+
 .button {
   display: inline-block;
   border-radius: 6px;
@@ -41,10 +42,30 @@ input[type=text]:focus, [type=date]:focus  {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.result-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map {
+  display: center;
+}
+
 a {
   text-decoration: none;
   color: black;
   font-family: 'Fjalla One', sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 ::-webkit-input-placeholder {
