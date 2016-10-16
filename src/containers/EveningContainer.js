@@ -5,16 +5,19 @@ import SelectedRestaurantRow from '../components/SelectedRestaurantRow'
 import SelectedEventRow from '../components/SelectedEventRow'
 import SelectedBarRow from '../components/SelectedBarRow'
 
+
 const Evening = class extends Component {
 
   render(){
         return (
           <div>
             <h1>Your Evening Itinerary</h1>
-              <SelectedRestaurantRow selectedRestaurant={this.props.selectedRestaurant} />
-              <SelectedEventRow selectedEvent={this.props.selectedEvent} />
-              <SelectedBarRow selectedBar={this.props.selectedBar} />
-            <div>
+                <SelectedRestaurantRow selectedRestaurant={this.props.selectedRestaurant} />
+                <SelectedEventRow selectedEvent={this.props.selectedEvent} />
+                <SelectedBarRow selectedBar={this.props.selectedBar} />
+            <br></br>
+            <br></br>
+            <div className="result-map">
               <MapComponent barCoords={this.props.selectedBar.selectedBar.location.coordinate}
               eventCoords={this.props.selectedEvent.selectedEvent.venue.location}
               restCoords={this.props.selectedRestaurant.selectedRestaurant.location.coordinate}/>

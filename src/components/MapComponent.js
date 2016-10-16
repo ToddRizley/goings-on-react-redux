@@ -3,6 +3,23 @@ import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps'
 
 
 const MapComponent = class extends Component {
+  // var infowindow1 = new google.maps.InfoWindow({
+  //     content: contentString
+  //   });
+  // var infowindow2 = new google.maps.InfoWindow({
+  //     content: contentString
+  //   });
+  // var infowindow1 = new google.maps.InfoWindow({
+  //     content: contentString
+  //   });
+  //
+  //
+  //   <InfoWindow
+  //     onCloseClick={_.noop}
+  //     onDomReady={_.noop}
+  //     onZIndexChanged={_.noop}
+  //     content="hello world"
+  //   />
   render() {
     return(
       <section style={{display: "flex"}}>
@@ -26,7 +43,6 @@ const MapComponent = class extends Component {
                 key='marker1'
                 label='1'
                 icon='http://maps.google.com/mapfiles/ms/icons/red.png'/>
-
 
             <Marker
                 position={{ lat: this.props.eventCoords.lat , lng: this.props.eventCoords.lon }}

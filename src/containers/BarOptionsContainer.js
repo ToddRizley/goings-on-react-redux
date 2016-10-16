@@ -19,9 +19,7 @@ const BarOptions = class extends Component {
         this.props.addBarOptions(bars)
       })
     }
-    getMiles(i) {
-     return i*0.000621371192;
-    }
+
 
     displayBars(){
       if (this.props.barsList.barsList){
