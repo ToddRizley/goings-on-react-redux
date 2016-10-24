@@ -2,10 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Fjalla One', sans-serif;
-  /*background-image: url("https://www.polaroidcube.com/wp-content/uploads/2015/07/Justice_in_concert.jpg");*/
-  /*background-size: cover;*/
   background-color: #88D0EC;
-  /*background-repeat: no-repeat;*/
   color: white;
 }
 
@@ -17,37 +14,40 @@ h1 {
 
 input[type=text], [type=date] {
     border: none;
-    border-bottom: 2px solid red;
+    border-bottom: .2em solid red;
     background-color: #88D0EC;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 input[type=text]:focus, [type=date]:focus  {
-    border: 2px solid red;
+    border: .2em solid red;
     outline: none;
+}
+
+label {
+  margin: .1em;
 }
 
 
 .button {
   display: inline-block;
-  border-radius: 6px;
+  border-radius: .6em;
   background-color: #84adc3;
   border: none;
   color: white;
   text-align: center;
-  font-size: 14px;
-  padding: 10px;
+  font-size: .8em;
+  padding-bottom, padding-top: 1.3em;
   width: 7em;
   height: 2em;
-  margin: 5px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  margin: .8em;
+  box-shadow: 0 .5em 1.8em 0 rgba(0,0,0,0.2), 0 .8em 2em 0 rgba(0,0,0,0.19);
 }
 
 .result-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
 }
 
 .result-map {
@@ -64,8 +64,8 @@ a {
   text-decoration: none;
   color: black;
   font-family: 'Fjalla One', sans-serif;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 1em;
+  margin-right: .3em;
 }
 
 ::-webkit-input-placeholder {
